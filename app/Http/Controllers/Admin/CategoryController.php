@@ -39,7 +39,11 @@ class CategoryController extends Controller
      */
     public function store(StoreCategoryRequest $request)
     {
-        //
+        {
+            $categories = Category::all();
+
+            return view('admin.categories.create', compact('categories'));
+        }
     }
 
     /**
