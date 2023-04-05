@@ -19,7 +19,17 @@ class PostController extends Controller
     {
         $postsPerPage =10;
 
-        if (request()->input('per_page')) {
+        if (
+            request()->input('per_page')
+        &&
+        (
+            request()->input('per_page') == 10
+            ||
+            request()->input('per_page') == 25
+            ||
+            request()->input('per_page') == 50
+        )
+        ) {
             $postsPerPage = request()->input('per_page');
         }
 
